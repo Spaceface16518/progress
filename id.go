@@ -3,5 +3,9 @@ package progress
 import uuid "github.com/satori/go.uuid"
 
 func NewBarID() uuid.UUID {
-	return uuid.Must(uuid.NewV4())
+	return uuid.Must(newUUID())
+}
+
+func newUUID() (uuid.UUID, error) {
+	return uuid.NewV4()
 }
